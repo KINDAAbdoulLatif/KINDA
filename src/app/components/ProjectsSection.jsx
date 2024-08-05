@@ -7,57 +7,57 @@ import { motion, useInView } from "framer-motion";
 const projectsData = [
   {
     id: 1,
-    title: "React Portfolio Website",
-    description: "Project 1 description",
+    title: "React Portfolio Website v.1",
+    description: "simple portfolio made with Next",
     image: "/images/projects/1.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/KINDAAbdoulLatif/Portfolio",
+    previewUrl: "https://github.com/KINDAAbdoulLatif/Portfolio",
   },
   {
     id: 2,
-    title: "Potography Portfolio Website",
-    description: "Project 2 description",
-    image: "/images/projects/2.png",
+    title: "React Portfolio Website v.2",
+    description: "Professional portfolio made with Next",
+    image: "/images/projects/4.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/KINDAAbdoulLatif/KINDA",
+    previewUrl: "https://github.com/KINDAAbdoulLatif/KINDA",
   },
   {
     id: 3,
-    title: "E-commerce Application",
-    description: "Project 3 description",
+    title: "Blog Application",
+    description: "A blog made with Laravel",
     image: "/images/projects/3.png",
     tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/KINDAAbdoulLatif/BlogLaravel",
+    previewUrl: "https://github.com/KINDAAbdoulLatif/BlogLaravel",
   },
   {
     id: 4,
-    title: "Food Ordering Application",
-    description: "Project 4 description",
-    image: "/images/projects/4.png",
+    title: "Button Maker Application",
+    description: "Make your button, customize size, color, shadow-box, borders etc. ",
+    image: "/images/projects/2.png",
     tag: ["All", "Mobile"],
-    gitUrl: "/",
-    previewUrl: "/",
+    gitUrl: "https://github.com/KINDAAbdoulLatif/Button_Maker",
+    previewUrl: "https://github.com/KINDAAbdoulLatif/Button_Maker",
   },
   {
     id: 5,
-    title: "React Firebase Template",
-    description: "Authentication and CRUD operations",
-    image: "/images/projects/5.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    title: "Aircrafteam",
+    description: "AI for aircraft recognition",
+    image: "/images/projects/5.jpg",
+    tag: ["All", "AI"],
+    gitUrl: "https://github.com/KINDAAbdoulLatif/Aircrafteam",
+    previewUrl: "https://github.com/KINDAAbdoulLatif/Aircrafteam",
   },
   {
     id: 6,
-    title: "Full-stack Roadmap",
-    description: "Project 5 description",
-    image: "/images/projects/6.png",
-    tag: ["All", "Web"],
-    gitUrl: "/",
-    previewUrl: "/",
+    title: "Flight",
+    description: "Big Data project for tracking US Flights",
+    image: "/images/projects/6.jpg",
+    tag: ["All", "AI"],
+    gitUrl: "https://github.com/KINDAAbdoulLatif/Flight_BigData",
+    previewUrl: "https://github.com/KINDAAbdoulLatif/Flight_BigData",
   },
 ];
 
@@ -97,8 +97,8 @@ const ProjectsSection = () => {
         />
         <ProjectTag
           onClick={handleTagChange}
-          name="Mobile"
-          isSelected={tag === "Mobile"}
+          name="AI"
+          isSelected={tag === "AI"}
         />
       </div>
       <ul ref={ref} className="grid md:grid-cols-3 gap-8 md:gap-12">

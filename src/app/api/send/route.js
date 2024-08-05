@@ -5,9 +5,21 @@ const resend = new Resend(process.env.RESEND_API_KEY);
 const fromEmail = process.env.FROM_EMAIL;
 
 export async function POST(req, res) {
-  const { email, subject, message } = await req.json();
-  console.log(email, subject, message);
   try {
+    const body = await req.json();
+    const { email, subject, message } = body;
+
+    if (!email || !subject || !message) {
+      console.error("Missing required fields: email, subject, or message.");
+      return NextResponse.json({ error: "Email, subject, and message are required." }, { status: 400 });
+    }
+
+    console.log("Sending email with the following details:");
+    console.log(`From: ${fromEmail}`);
+    console.log(`To: ${email}`);
+    console.log(`Subject: ${subject}`);
+    console.log(`Message: ${message}`);
+
     const data = await resend.emails.send({
       from: fromEmail,
       to: [fromEmail, email],
@@ -21,8 +33,11 @@ export async function POST(req, res) {
         </>
       ),
     });
+
+    console.log("Email sent successfully:", data);
     return NextResponse.json(data);
   } catch (error) {
-    return NextResponse.json({ error });
+    console.error("Error sending email:", error);
+    return NextResponse.json({ error: error.message }, { status: 500 });
   }
 }
